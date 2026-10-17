@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "auto_ominous",
+  "version": "1.0.0",
+  "name": "Auto Ominous Bottle",
+  "description": "Automatically consumes minecraft:ominous_bottle either after raids or on a timer (server-side only).",
+  "authors": [
+    "semkaGH"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/auto_ominous/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "main": [
+      "com.semka.autoominous.AutoOminousMod"
+    ]
+  },
+  "mixins": [
+    "mixins.auto_ominous.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.18.0",
+    "fabric": "*",
+    "minecraft": "1.26.3"
+  }
+}

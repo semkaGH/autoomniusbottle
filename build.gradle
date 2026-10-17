@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+    id 'fabric-loom' version '1.17.+'
+}
+
+group = 'com.semka'
+version = '1.0.0'
+archivesBaseName = 'auto_ominous'
+
+sourceCompatibility = JavaVersion.VERSION_25
+targetCompatibility = JavaVersion.VERSION_25
+
+repositories {
+    mavenCentral()
+    maven { url 'https://maven.fabricmc.net/' }
+    maven { url 'https://maven.terraformersmc.com/releases' }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:1.26.3"
+    mappings "net.fabricmc:yarn:1.26.3+build.1:v2" // adjust if you use different mapping provider
+    modImplementation "net.fabricmc:fabric-loader:0.18.0" // adjust if necessary
+    modImplementation "net.fabricmc.fabric-api:fabric-api:0.88.0+1.26.3" // adjust to a matching Fabric API for 1.26.3
+}
+
+java {
+    withSourcesJar()
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release.set(25)
+}
